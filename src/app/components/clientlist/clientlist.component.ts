@@ -10,6 +10,7 @@ import { Client } from '../../models/Client';
 export class ClientlistComponent implements OnInit {
 
   clients: Client[];
+  totalOwed: number = 0;
 
   constructor(private clientService: ClientService) { }
 
@@ -21,10 +22,15 @@ export class ClientlistComponent implements OnInit {
     this.clientService
       .getClients()
       .subscribe(clients => {
-        console.log(clients);
         this.clients = clients;
-        console.log(this.clients);
+        this.getTotalOwed();
     });
+  }
+
+  getTotalOwed() {
+    this.totalOwed = this.clients.reduce( (total,client) => {
+      return total + client.balance;
+    },0);
   }
 
 }
