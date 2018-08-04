@@ -13,7 +13,7 @@
 			<th>Name</th>
 			<th>Email</th>
 			<th>Balance</th>
-			<th>Actions</th>
+			<th>Action</th>
 		</thead>
 		<tbody>
 			<tr *ngFor=" let client of clients ">
@@ -21,9 +21,9 @@
 				<td>{{ client.email }}</td>
 				<td>{{ client.balance }}</td>
 				<td>
-					<button class="btn btn-sm btn-dark">
+					<a routerLink="/client/detail/{{ client.id }}" class="btn btn-sm btn-dark">
 						<i class="fa fa-plus-circle" aria-hidden="true"></i> details
-					</button>
+					</a>
 				</td>
 			</tr>
 		</tbody>

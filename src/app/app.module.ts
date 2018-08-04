@@ -13,6 +13,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AddClientComponent } from './components/add-client/add-client.component';
+import { ClientDetailComponent } from './components/client-detail/client-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AddClientComponent } from './components/add-client/add-client.component
     ClientlistComponent,
     DashboardComponent,
     SidebarComponent,
-    AddClientComponent
+    AddClientComponent,
+    ClientDetailComponent
   ],
   imports: [
     BrowserModule,
