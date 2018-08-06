@@ -31,31 +31,28 @@ export class AddClientComponent implements OnInit {
 
   ngOnInit() {
   }
-   onSubmit({value,valid}: {value: Client,valid: boolean}) {
-     if (this.disableBalanceOnAdd){
-       value.balance = 0;
-     }
 
-     if (!valid) {
-       
-       //show messages
-       this.flashMessage.show('Please Fill Out The Form Correctly', {
-         cssClass: 'alert-danger',timeout: 4000
-       });
-     } else {
+  onSubmit({value,valid}: {value: Client,valid: boolean}) {
+        if (this.disableBalanceOnAdd){
+          value.balance = 0;
+        }
 
-       // add new client
-       this.ClientService.newClient(value);
+        if (!valid) {
+          //show messages
+          this.flashMessage.show('Please Fill Out The Form Correctly', {
+            cssClass: 'alert-danger',timeout: 4000
+          });
+        } else {
+            // add new client
+           this.ClientService.newClient(value);
 
-       // show message
-       this.flashMessage.show('New Client Added', {
-         cssClass: 'alert-success',timeout: 4000
-       });
+           // show message
+           this.flashMessage.show('New Client Added', {
+             cssClass: 'alert-success',timeout: 4000
+            });
 
-       // redirect to dashboard
-       this.router.navigate(['/']);
-     }
-
-   }
-
+           // redirect to dashboard
+           this.router.navigate(['/']);
+        }
+    }
 }

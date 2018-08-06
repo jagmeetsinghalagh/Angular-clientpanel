@@ -11,6 +11,7 @@ export class ClientlistComponent implements OnInit {
 
   clients: Client[];
   totalOwed: number = 0;
+  hasOwed: boolean = false;
 
   constructor(private clientService: ClientService) { }
 
@@ -31,6 +32,9 @@ export class ClientlistComponent implements OnInit {
     this.totalOwed = this.clients.reduce( (total,client) => {
       return total + client.balance;
     },0);
+    if (this.totalOwed > 0) {
+      this.hasOwed = true;
+    }
   }
 
 }

@@ -37,7 +37,6 @@ export class ClientDetailComponent implements OnInit {
     this.clientService.getClient(this.id).subscribe(client => {
       if (client != null) {
         this.client = client;
-        console.log(this.client);
         if (client.balance > 0) {
           this.hasBalance = true;
         }
@@ -49,10 +48,22 @@ export class ClientDetailComponent implements OnInit {
   // updates the balance
   updBalance() {
     this.clientService
-      .updateClient(this.client);
+      .updateClient(this.client,this.id);
     // show success message
     this.flashMessages.show('Balance Updated Successfully', {
       cssClass: 'alert-info', timeout: 3000
+    });
+    // redirect to dashboard
+    this.router.navigate(['/']);
+  }
+
+  // deletes the client
+  onDeleteClick() {
+    this.clientService
+      .deleteClient(this.client);
+    // show success message
+    this.flashMessages.show('Client Deleted Successfully', {
+      cssClass: 'alert-danger', timeout: 3000
     });
     // redirect to dashboard
     this.router.navigate(['/']);

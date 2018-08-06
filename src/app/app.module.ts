@@ -11,18 +11,18 @@ import { ClientService } from './services/client.service';
 import { ClientlistComponent } from './components/clientlist/clientlist.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AddClientComponent } from './components/add-client/add-client.component';
 import { ClientDetailComponent } from './components/client-detail/client-detail.component';
+import { EditClientComponent } from './components/edit-client/edit-client.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClientlistComponent,
     DashboardComponent,
-    SidebarComponent,
     AddClientComponent,
-    ClientDetailComponent
+    ClientDetailComponent,
+    EditClientComponent
   ],
   imports: [
     BrowserModule,

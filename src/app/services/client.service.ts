@@ -59,10 +59,16 @@ export class ClientService {
   }
 
   // update the client in the backend
-  updateClient(client: Client) {
-    let id = client.id
+  updateClient(client: Client, id: string) {
     this.clientDoc = this.afs.doc<Client>(`clients/${id}`);
     this.clientDoc.update(client);
+  }
+
+  // delete the client from database
+  deleteClient(client: Client) {
+    let id = client.id
+    this.clientDoc = this.afs.doc<Client>(`clients/${id}`);
+    this.clientDoc.delete();
   }
 
 
