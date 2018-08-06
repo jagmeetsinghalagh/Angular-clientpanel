@@ -5,13 +5,15 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddClientComponent } from './components/add-client/add-client.component';
 import { ClientDetailComponent } from './components/client-detail/client-detail.component';
 import { EditClientComponent } from './components/edit-client/edit-client.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 const routes: Routes = [
-  { path: '' , component: DashboardComponent },
   { path: 'clients/add' , component: AddClientComponent },
   { path: 'client/detail/:id' , component: ClientDetailComponent },
-  { path: 'client/edit/:id', component: EditClientComponent }
+  { path: 'client/edit/:id', component: EditClientComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: '' , component: LoginComponent }
 ];
 
 @NgModule({

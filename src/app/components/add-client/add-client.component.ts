@@ -52,7 +52,7 @@ export class AddClientComponent implements OnInit {
             });
 
            // redirect to dashboard
-           this.router.navigate(['/']);
+           this.router.navigate(['/dashboard']);
         }
     }
 }

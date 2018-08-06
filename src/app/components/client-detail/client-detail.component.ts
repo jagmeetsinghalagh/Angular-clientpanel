@@ -54,7 +54,7 @@ export class ClientDetailComponent implements OnInit {
       cssClass: 'alert-info', timeout: 3000
     });
     // redirect to dashboard
-    this.router.navigate(['/']);
+    this.router.navigate(['/dashboard']);
   }
 
   // deletes the client
@@ -66,7 +66,7 @@ export class ClientDetailComponent implements OnInit {
       cssClass: 'alert-danger', timeout: 3000
     });
     // redirect to dashboard
-    this.router.navigate(['/']);
+    this.router.navigate(['/dashboard']);
   }
 
 }
