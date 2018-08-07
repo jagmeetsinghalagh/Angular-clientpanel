@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../services/client.service';
+import { AuthService } from '../../services/auth.service';
 import { Client } from '../../models/Client';
 
 @Component({
@@ -13,10 +14,19 @@ export class ClientlistComponent implements OnInit {
   totalOwed: number = 0;
   hasOwed: boolean = false;
 
-  constructor(private clientService: ClientService) { }
+  constructor(
+    private clientService: ClientService,
+    private authService: AuthService
+  ) { }
 
   ngOnInit() {
-    this.fetchClients();
+    this.authService
+      .getAuth()
+      .subscribe( auth => {
+      if (auth) {
+        this.fetchClients();
+      }
+    });
   }
 
   fetchClients() {

@@ -24,7 +24,10 @@
         <a class="nav-link" routerLink="/settings">Settings</a>
       </li>
       <li *ngIf="isLoggedIn" class="nav-item">
-        <button type="button" class="btn btn-link nav-link" (click)="logoutClicked()" >logout</button>
+        <button type="button" class="btn btn-link nav-link" 
+        (click)="logoutClicked()">
+          logout
+        </button> 
       </li>
     </ul>
   </div>

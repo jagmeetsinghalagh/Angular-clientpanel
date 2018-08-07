@@ -9,7 +9,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { ClientService } from './services/client.service'; 
-import { AuthService } from './services/auth.service'; 
+import { AuthService } from './services/auth.service';
 import { ClientlistComponent } from './components/clientlist/clientlist.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppRoutingModule } from './/app-routing.module';

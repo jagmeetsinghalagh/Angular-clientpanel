@@ -7,12 +7,13 @@ import { ClientDetailComponent } from './components/client-detail/client-detail.
 import { EditClientComponent } from './components/edit-client/edit-client.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AuthGuardService } from './guards/authguard.service';
 
 const routes: Routes = [
-  { path: 'clients/add' , component: AddClientComponent },
-  { path: 'client/detail/:id' , component: ClientDetailComponent },
-  { path: 'client/edit/:id', component: EditClientComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'clients/add' , component: AddClientComponent, canActivate: [AuthGuardService] },
+  { path: 'client/detail/:id' , component: ClientDetailComponent, canActivate: [AuthGuardService] },
+  { path: 'client/edit/:id', component: EditClientComponent, canActivate: [AuthGuardService] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuardService] },
   { path: 'register', component: RegisterComponent },
   { path: '' , component: LoginComponent }
 ];
@@ -22,6 +23,6 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes)
   ],
-  declarations: []
+  providers: [AuthGuardService]
 })
 export class AppRoutingModule { }
