@@ -18,6 +18,7 @@ import { ClientDetailComponent } from './components/client-detail/client-detail.
 import { EditClientComponent } from './components/edit-client/edit-client.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LoginComponent } from './components/login/login.component';
     ClientDetailComponent,
     EditClientComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
